@@ -9,6 +9,8 @@ import { OAuthModule } from "angular-oauth2-oidc";
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from "./shared/auth/auth.guard.service";
 import { EditComponent } from "./edit/edit.component";
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
 //    { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
@@ -21,7 +23,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    EditComponent
+    EditComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
