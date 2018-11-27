@@ -21,8 +21,10 @@ const appRoutes: Routes = [
     { path: 'edit/:id', component: EditComponent, canActivate: [AuthGuard] },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
-   // { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: '**', redirectTo: 'home' }
+    { path: 'ingredients', component: IngredientsComponent },
+   // { path: 'profil/:id', redirectTo: 'myProfil' },
+    { path: '**', redirectTo: 'home' },
+    { path: 'ingredients', redirectTo: 'ingredients' },
 ];
 
 let config = new AuthServiceConfig([
