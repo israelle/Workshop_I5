@@ -11,6 +11,7 @@ import { AuthGuard } from "./shared/auth/auth.guard.service";
 import { EditComponent } from "./edit/edit.component";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
 //    { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     HomeComponent,
     EditComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
