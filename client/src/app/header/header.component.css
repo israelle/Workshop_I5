@@ -1,0 +1,14 @@
+.nav-link-header {
+    font-size : 2.2em;
+    color: #FF8400;
+}
+
+li a {
+    display: inline-block;
+    padding: 30px;
+}
+
+.navbar-user {
+    height: 64px;
+    width: auto;
+}
