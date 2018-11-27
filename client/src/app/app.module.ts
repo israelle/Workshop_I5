@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import {FacebookModule} from "ng2-facebook-sdk";
 import {AuthServiceConfig, FacebookLoginProvider, GoogleLoginProvider, SocialLoginModule} from "angular4-social-login";
 import secrets from "./secret";
+import { IngredientsComponent } from './ingredients/ingredients.component';
 
 const appRoutes: Routes = [
     { path: 'edit/:id', component: EditComponent, canActivate: [AuthGuard] },
@@ -42,7 +43,8 @@ let config = new AuthServiceConfig([
     EditComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    IngredientsComponent
   ],
   imports: [
     BrowserModule,
