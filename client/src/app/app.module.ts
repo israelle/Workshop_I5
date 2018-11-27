@@ -11,12 +11,14 @@ import { AuthGuard } from "./shared/auth/auth.guard.service";
 import { EditComponent } from "./edit/edit.component";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
-//    { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
     { path: 'edit/:id', component: EditComponent, canActivate: [AuthGuard] },
     { path: 'home', component: HomeComponent },
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'login', component: LoginComponent },
+  //  { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: '**', redirectTo: 'home' }
 ];
 @NgModule({
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     HomeComponent,
     EditComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
