@@ -55,4 +55,103 @@ class Utilisateur
      * @ORM\Column(name="photo_profil", type="string", length=255)
      */
     private $photo_profil;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNomUtilisateur(): string
+    {
+        return $this->nom_utilisateur;
+    }
+
+    /**
+     * @param string $nom_utilisateur
+     */
+    public function setNomUtilisateur(string $nom_utilisateur): void
+    {
+        $this->nom_utilisateur = $nom_utilisateur;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMotDePasse(): string
+    {
+        return $this->mot_de_passe;
+    }
+
+    /**
+     * @param string $mot_de_passe
+     */
+    public function setMotDePasse(string $mot_de_passe): void
+    {
+        $this->mot_de_passe = $mot_de_passe;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdresse(): string
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * @param string $adresse
+     */
+    public function setAdresse(string $adresse): void
+    {
+        $this->adresse = $adresse;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhotoProfil(): string
+    {
+        return $this->photo_profil;
+    }
+
+    /**
+     * @param string $photo_profil
+     */
+    public function setPhotoProfil(string $photo_profil): void
+    {
+        $this->photo_profil = $photo_profil;
+    }
+
+
+
 }
