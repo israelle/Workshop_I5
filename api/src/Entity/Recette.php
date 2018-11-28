@@ -6,10 +6,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * This is a dummy entity. Remove it!
+ * @ApiResource()
+ * Class Ingredient
+ * @ORM\Table(name="ingredient")
+ * @ORM\Entity()
  *
- * @ApiResource
- * @ORM\Entity
  */
 class Recette
 {
@@ -26,6 +27,16 @@ class Recette
      * @var string $nom
      */
     private $nom;
+
+
+
+    /**
+     * @var string $photo
+     * @ORM\Column(name="photo", type="string", length=255)
+     */
+    private $photo;
+
+
 
 
     /**
@@ -59,5 +70,23 @@ class Recette
     {
         $this->nom = $nom;
     }
+
+    /**
+     * @return string
+     */
+    public function getPhoto(): string
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param string $photo
+     */
+    public function setPhoto(string $photo): void
+    {
+        $this->photo = $photo;
+    }
+
+
 
 }

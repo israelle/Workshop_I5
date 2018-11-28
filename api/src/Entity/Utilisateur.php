@@ -152,5 +152,13 @@ class Utilisateur
         $this->photo_profil = $photo_profil;
     }
 
+    /**
+     * @OneToMany(targetEntity="MotsCles", mappedBy="utilisateur", cascade={"ALL"}, indexBy="mots_cles")
+     */
+    private $motscles;
 
+    public function ajoutMotsCles($valeur)
+    {
+        $this->motscles[$valeur] = new MotsCles($valeur);
+    }
 }
