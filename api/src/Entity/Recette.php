@@ -21,18 +21,12 @@ class Recette
      * @ORM\Column(type="integer")
      */
     private $id;
+
     /**
-     * @var string $title
+     * @var string $nom
      */
-    private $title;
-    /**
-     * @var string $path
-     */
-    private $path;
-    /**
-     * @var array $results
-     */
-    private $results;
+    private $nom;
+
 
     /**
      * @return mixed
@@ -53,50 +47,17 @@ class Recette
     /**
      * @return string
      */
-    public function getTitle(): string
+    public function getNom(): string
     {
-        return $this->title;
+        return $this->nom;
     }
 
     /**
-     * @param string $title
+     * @param string $nom
      */
-    public function setTitle(string $title): void
+    public function setNom($nom): void
     {
-        $this->title = $title;
+        $this->nom = $nom;
     }
-
-    /**
-     * @return string
-     */
-    public function getPath(): string
-    {
-        return $this->path;
-    }
-
-    /**
-     * @param string $path
-     */
-    public function setPath(string $path): void
-    {
-        $this->path = $path;
-    }
-
-    /**
-     * @return array
-     */
-    public function getResults(): array
-    {
-        return $this->results;
-    }
-
-    /**
-     * @param array $results
-     */
-    public function setResults(array $results): void
-    {
-        $this->results = $results;
-    }
-
 
 }
