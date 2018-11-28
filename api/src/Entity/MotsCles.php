@@ -46,7 +46,7 @@ class MotsCles
     private $date;
 
 
-    /** @Id @ManyToOne(targetEntity="Utilisateur", inversedBy="motscles") */
+    /** @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="motscles") */
     private $utilisateur;
 
 
