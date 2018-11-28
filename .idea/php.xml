@@ -62,9 +62,24 @@
       <path value="$PROJECT_DIR$/api/vendor/nelmio/cors-bundle" />
       <path value="$PROJECT_DIR$/api/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/api/vendor/soneritics/pcntl" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/reflection" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/api/vendor/symfony/orm-pack" />
+      <path value="$PROJECT_DIR$/api/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/api/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/api/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/api/vendor/symfony/web-server-bundle" />
+      <path value="$PROJECT_DIR$/api/vendor/api-platform/schema-generator" />
+      <path value="$PROJECT_DIR$/api/vendor/zendframework/zend-eventmanager" />
+      <path value="$PROJECT_DIR$/api/vendor/zendframework/zend-code" />
+      <path value="$PROJECT_DIR$/api/vendor/php-cs-fixer/diff" />
+      <path value="$PROJECT_DIR$/api/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/api/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/api/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/api/vendor/ocramius/package-versions" />
+      <path value="$PROJECT_DIR$/api/vendor/easyrdf/easyrdf" />
+      <path value="$PROJECT_DIR$/api/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/api/vendor/league/html-to-markdown" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/migrations" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
