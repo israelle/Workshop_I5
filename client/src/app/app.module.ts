@@ -12,15 +12,32 @@ import { EditComponent } from "./edit/edit.component";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
+import {FacebookModule} from "ng2-facebook-sdk";
+import {AuthServiceConfig, FacebookLoginProvider, GoogleLoginProvider, SocialLoginModule} from "angular4-social-login";
+import secrets from "./secret";
+import { IngredientsComponent } from './ingredients/ingredients.component';
 
 const appRoutes: Routes = [
     { path: 'edit/:id', component: EditComponent, canActivate: [AuthGuard] },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
-  //  { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: '**', redirectTo: 'home' }
+    { path: 'ingredients', component: IngredientsComponent },
+   // { path: 'profil/:id', redirectTo: 'myProfil' },
+    { path: '**', redirectTo: 'home' },
+    { path: 'ingredients', redirectTo: 'ingredients' },
 ];
+
+let config = new AuthServiceConfig([
+    {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider(secrets.googleAppIdClient)
+    },
+    {
+        id: FacebookLoginProvider.PROVIDER_ID,
+        provider: new FacebookLoginProvider(secrets.facebookAppId)
+    }
+]);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,16 +45,21 @@ const appRoutes: Routes = [
     EditComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    IngredientsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
       HttpClientModule,
       OAuthModule.forRoot(),
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      FacebookModule.forRoot(),
+      SocialLoginModule.initialize(config),
+
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

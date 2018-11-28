@@ -9,18 +9,32 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link-header" href="#">Mon Compte </a>
+        <a class="nav-link-header" href="#">Présentation </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link-header" href="#">Présentation </a>
+        <a class="nav-link-header" href="#">Nos services </a>
       </li>
       <li class="nav-item active">
           <a class="nav-link-header" href="#">Nous contacter </a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link-header" href="#">Nous rejoindre </a>
+      </li>
+      <li class="nav-item active">
+          <a class="nav-link-header">
+            <div class="input-group">
+              <input type="search" class="form-control  border-secondary py-2" placeholder="Search">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </div>
+            </div>
+          </a>
+      </li>
     </ul>
   </div>
-
-  <a class="navbar-user" href="#">
+  <a class="navbar-user" routerLink="login" *ngIf="!isLogin">
       <img src="assets/img/user.png" alt="">
   </a>
 </nav>
