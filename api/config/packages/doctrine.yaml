@@ -8,8 +8,14 @@ parameters:
 doctrine:
     dbal:
         # configure these for your database server
-        driver: 'pdo_pgsql'
+        driver: 'pdo_mysql'
         server_version: '9.6'
+        host: '%env(DATABASE_HOST)%'
+        port: '%env(DATABASE_PORT)%'
+        dbname: '%env(DATABASE_NAME)%'
+        user: '%env(DATABASE_USER)%'
+        password: '%env(DATABASE_PWD)%'
+        charset: UTF8
 
         # With Symfony 3.3, remove the `resolve:` prefix
         url: '%env(resolve:DATABASE_URL)%'
