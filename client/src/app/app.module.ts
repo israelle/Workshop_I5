@@ -17,14 +17,17 @@ import { AuthServiceConfig, GoogleLoginProvider, SocialLoginModule } from "angul
 import {LoginService} from "./service/login.service";
 import { FormsModule } from '@angular/forms';
 import {NgSelectModule} from "@ng-select/ng-select";
+import { JoinUsComponent } from './join-us/join-us.component';
+import {AgmCoreModule} from "@agm/core";
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'ingredients', component: IngredientsComponent },
+    { path: 'joinUs', component: JoinUsComponent },
    // { path: 'profil/:id', redirectTo: 'myProfil' },
     { path: '**', redirectTo: 'home' },
-    { path: 'ingredients', redirectTo: 'ingredients' },
+    // { path: 'ingredients', redirectTo: 'ingredients' },
 ];
 
 let config = new AuthServiceConfig([
@@ -44,7 +47,8 @@ export function provideConfig() {
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    IngredientsComponent
+    IngredientsComponent,
+    JoinUsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,9 @@ export function provideConfig() {
       HttpClientModule,
       RouterModule.forRoot(appRoutes),
       SocialLoginModule,
+      AgmCoreModule.forRoot({
+          apiKey: 'AIzaSyBCxz26JzBqYQ6ZxaTtjbFskCWUy8hk5Nk'
+      })
 
   ],
   providers: [{
