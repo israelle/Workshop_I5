@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FacebookService, InitParams, LoginResponse} from "ng2-facebook-sdk";
-import {Router} from "@angular/router";
 
 import {HttpClient} from "@angular/common/http";
-import {AuthService, FacebookLoginProvider, GoogleLoginProvider, SocialUser} from "angular4-social-login";
+import {AuthService, FacebookLoginProvider, GoogleLoginProvider, SocialUser} from "angularx-social-login";
+import {LoginService} from "../service/login.service";
 
 @Component({
   selector: 'app-login',
@@ -16,13 +15,16 @@ export class LoginComponent implements OnInit {
     private loggedIn: boolean;
 
   constructor( private authService: AuthService,
-               private http: HttpClient) { }
+               private http: HttpClient,
+               private loginService: LoginService) { }
 
     ngOnInit() {
         this.authService.authState.subscribe((user) => {
             this.user = user;
             this.loggedIn = (user != null);
-        });
+            this.loginService.setUser(user);
+            this.loginService.loggedIn  = this.loggedIn;
+        })
     }
     signInWithGoogle(): void {
         this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);

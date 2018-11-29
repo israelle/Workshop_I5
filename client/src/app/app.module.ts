@@ -5,20 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {RouterModule, Routes} from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
-import { OAuthModule } from "angular-oauth2-oidc";
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from "./shared/auth/auth.guard.service";
 import { EditComponent } from "./edit/edit.component";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import {FacebookModule} from "ng2-facebook-sdk";
-import {AuthServiceConfig, FacebookLoginProvider, GoogleLoginProvider, SocialLoginModule} from "angular4-social-login";
 import secrets from "./secret";
 import { IngredientsComponent } from './ingredients/ingredients.component';
+import { AuthServiceConfig, GoogleLoginProvider, SocialLoginModule } from "angularx-social-login";
+import {LoginService} from "./service/login.service";
 
 const appRoutes: Routes = [
-    { path: 'edit/:id', component: EditComponent, canActivate: [AuthGuard] },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
     { path: 'ingredients', component: IngredientsComponent },
@@ -32,12 +30,10 @@ let config = new AuthServiceConfig([
         id: GoogleLoginProvider.PROVIDER_ID,
         provider: new GoogleLoginProvider(secrets.googleAppIdClient)
     },
-    {
-        id: FacebookLoginProvider.PROVIDER_ID,
-        provider: new FacebookLoginProvider(secrets.facebookAppId)
-    }
 ]);
-
+export function provideConfig() {
+    return config;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,13 +48,15 @@ let config = new AuthServiceConfig([
     BrowserModule,
     AppRoutingModule,
       HttpClientModule,
-      OAuthModule.forRoot(),
       RouterModule.forRoot(appRoutes),
-      FacebookModule.forRoot(),
-      SocialLoginModule.initialize(config),
+      SocialLoginModule,
 
   ],
-  providers: [
+  providers: [{
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+  },
+      LoginService,
   ],
   bootstrap: [AppComponent]
 })
