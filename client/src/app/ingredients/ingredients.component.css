@@ -1,4 +1,32 @@
 .btn-suivant{
-    margin-left: 650px;
+    margin-left: 1033px;
     margin-top: 15px;
+}
+
+.select-list{
+    margin-top: 20px;
+}
+
+.libelle{
+    margin: auto;
+    text-align: center;
+    color: #FF8400;
+    margin-top: 20px;
+}
+
+.libelle2{
+    margin: auto;
+    text-align: left;
+    color: #FF8400;
+    margin-top: 20px;
+}
+
+.btn-clear{
+    background-color: #FF8400;
+    color: white;
+}
+
+.btn-search{
+    background-color: #FF8400;
+    color: white;
 }
