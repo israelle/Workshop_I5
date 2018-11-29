@@ -1,5 +1,5 @@
 const secrets = {
     facebookAppId: '2041239916167873',
-    googleAppIdClient: '1093614311398-irpvfb97heljhjcvo4jq7kdtjn01f75b.apps.googleusercontent.com'
+    googleAppIdClient: '1093614311398-sg6su7ak187i31fnc6q0ba1r69iuciel.apps.googleusercontent.com'
 };
 export default secrets;
