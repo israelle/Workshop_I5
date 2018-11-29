@@ -13,7 +13,10 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *      normalizationContext={"groups"={"read"}},
+ *     denormalizationContext={"groups"={"post"}}
+ * )
  * Class Utilisateur
  * @ORM\Table(name="utilisateur")
  * @ORM\Entity()
@@ -33,36 +36,39 @@ class Utilisateur
     /**
      * @var string
      * @ORM\Column(name="nom_utilisateur", type="string", length=255)
+     * @Groups("post")
      */
     private $nom_utilisateur;
 
     /**
      * @var string
      * @ORM\Column(name="email", type="string", length=50)
+     * @Groups("post")
      */
     private  $email;
 
     /**
      * @var string
      * @ORM\Column(name="mot_de_passe", type="string", length=50)
+     * @Groups("post")
      */
     private $mot_de_passe;
 
     /**
      * @var string
      * @ORM\Column(name="adresse", type="string", length=255)
+     * @Groups("post")
      */
     private $adresse;
 
     /**
      * @var string
      * @ORM\Column(name="photo_profil", type="string", length=255)
+     * @Groups("post")
      */
     private $photo_profil;
 
-    /**
-     * @ORM\OneToMany(targetEntity="MotsCles", mappedBy="utilisateur", cascade={"ALL"}, indexBy="mots_cles")
-     */
+
     private $motscles;
 
     public function ajoutMotsCles($valeur)

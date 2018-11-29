@@ -15,8 +15,8 @@ import secrets from "./secret";
 import { IngredientsComponent } from './ingredients/ingredients.component';
 import { AuthServiceConfig, GoogleLoginProvider, SocialLoginModule } from "angularx-social-login";
 import {LoginService} from "./service/login.service";
-import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
+import {NgSelectModule} from "@ng-select/ng-select";
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },

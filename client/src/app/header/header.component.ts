@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginService} from "../service/login.service";
-import {SocialUser} from "angularx-social-login";
+import { LoginService } from "../service/login.service";
+import { AuthService, SocialUser } from "angularx-social-login";
 
 @Component({
   selector: 'app-header',
@@ -11,16 +11,23 @@ export class HeaderComponent implements OnInit {
 
     isLogin: boolean;
     user : SocialUser;
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService,
+              private authService: AuthService) {
+      console.log('loginservice', loginService);
+      if (loginService.getUser()) {
+          this.user = loginService.getUser();
+          console.log('test3', this.user);
+          this.isLogin = true;
+      }
+  }
 
   ngOnInit() {
-
-
+      console.log('oui ', this.loginService);
+      console.log('oui ', this.loginService.getUser());
   }
 
   loggin(){
       this.isLogin= this.loginService.loggedIn;
       this.user = this.loginService.user;
-      this.loginService.refresh();
   }
 }

@@ -1,12 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Mehdi
- * Date: 28/11/2018
- * Time: 09:42
- */
 
 namespace App\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -16,30 +11,25 @@ use ApiPlatform\Core\Annotation\ApiResource;
 /**
  * @ApiResource()
  * Class Ingredient
- * @ORM\Table(name="ingredient")
+ * @ORM\Table(name="ingrediente")
  * @ORM\Entity()
  *
  */
 class Ingredient
 {
     /**
-     * @var int The entity Id
-     *
+     * @var int $id
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
 
-
     /**
      * @var string $title
      * @ORM\Column(name="nom", type="string", length=255)
      */
     private $nom;
-
-
-
 
     /**
      * @var float $prixLeclerc
@@ -185,6 +175,4 @@ class Ingredient
     {
         $this->indiceSante = $indiceSante; // MBI
     }
-
-
 }

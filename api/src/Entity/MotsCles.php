@@ -1,12 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Mehdi
- * Date: 28/11/2018
- * Time: 11:03
- */
+
 
 namespace App\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -46,7 +42,6 @@ class MotsCles
     private $date;
 
 
-    /** @ORM\ManyToOne(targetEntity="Utilisateur", inversedBy="motscles") */
     private $utilisateur;
 
 
