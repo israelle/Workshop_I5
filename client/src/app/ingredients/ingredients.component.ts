@@ -33,9 +33,9 @@ export class IngredientsComponent implements OnInit {
 
 getIngredients(term: string = null): Observable<string[]> {
   let items = getMockIngredients();
-  if (term) {
-      items = items.filter(x => x.toLocaleLowerCase().indexOf(term.toLocaleLowerCase()) > -1);
-  }
+  // if (term) {
+  //     items = items.filter(x => x.toLocaleLowerCase().indexOf(term.toLocaleLowerCase()) > -1);
+  // }
   return of(items).pipe(delay(500));
 }
 
