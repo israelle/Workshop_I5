@@ -22,11 +22,11 @@ class ApiController
         // recup des ingredients en get
         $params = $request->query->get('ingredients');
 
-        $tab = explode(",", $params);
 
+        $tab = explode(",", $params);
         // il faut spécifier le chemin complet sinon ça ne fonctionne pas.
         $pathExe = 'C:\Users\Mehdi\AppData\Local\Programs\Python\Python37\python.exe';
-        $pathFile = 'C:\Users\Mehdi\Documents\GitHub\Workshop_I5\api\src\Python\test.py';
+        $pathFile = 'C:\Users\Mehdi\Documents\GitHub\Workshop_I5\api\src\Python\ia_recette.py';
         $command = $pathExe.' '.$pathFile;
 
         foreach($tab as $t){
@@ -40,9 +40,19 @@ class ApiController
         if (!$process->isSuccessful()) {
             throw new ProcessFailedException($process);
         }
-        var_dump($process->getOutput());
+        $return = $process->getOutput();
 
-        die();
+        // ok c'est degueu le code en dessous mais on n'as pas le temps !
+
+        // on retire les charactères générés en python
+        if (preg_match('/{(.*?)}/', $return, $match) == 1) {
+            $return = "{".$match[1]."}";
+        }
+
+        $return = json_decode(str_replace("'", "\"", $return)); // on ne peut pas json decode avec des simples quotes ..
+        //$return = substr($return, 70);
+        var_dump($return);
+        die( );
     }
 
 }

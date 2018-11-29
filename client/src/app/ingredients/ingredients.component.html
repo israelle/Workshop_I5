@@ -23,11 +23,11 @@
     <ul>
         <li *ngFor="let item of selectedIngredients">{{item.B}}</li>
     </ul>
-    <button (click)="clearModel1()" class="btn-clear">Clear model</button>
-</div> -->
 
+</div> -->
+<button (click)="clearModel1()" class="btn-clear">Clear model</button>
 <div class="btn-suivant">
-  <button class="btn-search" type="button">
+  <button class="btn-search" (click)="goIA()" type="button">
     Search
   </button>
 </div>
